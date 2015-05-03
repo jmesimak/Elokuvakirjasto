@@ -1,0 +1,12 @@
+<div id="movie-list" class="row">
+    <h1>Lista elokuvista</h1>
+    <ul class="collection">
+        <li class="collection-item" ng-repeat="movie in movies">
+            <div class="movie">
+                <h2 style="font-size: 2em;">{{movie.name}} ({{movie.release}})</h2>
+                <p>Ohjannut: {{movie.director}}</p>
+                <p>{{movie.description}}</p>
+            </div>
+        </li>
+    </ul>
+</div>

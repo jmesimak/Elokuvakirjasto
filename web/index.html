@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="MovieApp">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,8 +8,19 @@
     <title>Elokuvakirjasto</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
-    
+    <nav>
+        <div class="nav-wrapper">
+            <ul id="nav-mobile" class="left">
+                <li><a href="#/">Elokuvakirjasto</a></li>
+                <li><a href="#/movies">Elokuvat</a></li>
+                <li><a href="#/movies/new">Lisää elokuva</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div id="content-box" class="container">
+        <div ng-view></div>
+    </div>    
+
     <!-- Hyödyllisiä kirjastoja -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/materialize/dist/js/materialize.min.js"></script>
@@ -20,5 +31,7 @@
 
     <!-- Linkitä omat tiedostosi tähän (huomaa, että polun juuri on web-kansio!) -->
     <script src="app/app.js"></script>    
+    <script src="app/services/MovieService.js"></script>
+    <script src="app/controllers/MovieController.js"></script>
   </body>
 </html>

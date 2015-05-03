@@ -1,0 +1,41 @@
+<div class="row">
+  <form novalidate class="col s12" name="newMovie">
+      
+    <div class="row">
+      <div class="input-field col s12">
+        <input ng-model="movie.name" id="name" name="name" type="text" class="validate" ng-minlength="1" required>
+        <label for="name">Nimi*</label>
+        <p ng-show="newMovie.name.$invalid && newMovie.name.$dirty">Nimen tulee olla vähintään yhden merkin pituinen</p>
+      </div>
+    </div>
+      
+    <div class="row">
+        <div class="input-field col s12">
+         <input ng-model="movie.director" id="director" name="director" type="text" class="validate" ng-minlength="2" required>
+         <label for="director">Ohjaaja*</label>
+         <p ng-show="newMovie.director.$invalid && newMovie.director.$dirty">Ohjaajan nimen tulee olla vähintään kaksi merkkiä</p>
+        </div>
+    </div>
+      
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="release" type="text" ng-model="movie.release" name="release" ng-minlength="4" ng-maxlength="4" ng-pattern="/^[0-9]+$/" required>
+        <label for="release">Julkaisuvuosi*</label>
+        <p ng-show="newMovie.release.$invalid && newMovie.release.$dirty">Julkaisuvuoden tulee olla neljä numeroa</p>
+      </div>
+    </div>
+      
+    <div class="row">
+      <div class="input-field col s12">
+        <textarea ng-model="movie.description" id="description" name="description" class="materialize-textarea" ng-minlength="20" required></textarea>
+        <label for="description">Kuvaus*</label>
+        <p ng-show="newMovie.description.$invalid && newMovie.description.$dirty">Kirjoita myös kuvaus, 20 merkkiä</p>
+      </div>
+    </div>
+      
+    <button class="btn waves-effect waves-light" ng-click="addMovie()" name="action" ng-disabled="newMovie.$invalid">Luo
+        <i class="mdi-content-send right"></i>
+    </button>
+      
+  </form>
+</div>
