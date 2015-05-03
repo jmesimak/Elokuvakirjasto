@@ -55,7 +55,7 @@ describe('Movie list', function(){
 	    inject(function($controller, $rootScope) {
 	      scope = $rootScope.$new();
 	      // Muista vaihtaa oikea kontrollerin nimi!
-	      controller = $controller('MovieController', {
+	      controller = $controller('MoviesController', {
 	        $scope: scope,
 	        FirebaseService: FirebaseServiceMock
 	      });

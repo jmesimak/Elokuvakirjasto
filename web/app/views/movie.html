@@ -1,0 +1,8 @@
+<h1>{{movie.name}} ({{movie.release}})</h1>
+<p>Ohjannut: {{movie.director}}</p>
+<p>{{movie.description}}</p>
+
+<a ng-show="movie" class="waves-effect waves-light btn" ng-href="#/movies/{{movie.$id}}/edit">Muokkaa elokuvan tietoja</a>
+<br>
+<br>
+<a ng-show="movie" class="waves-effect waves-light btn red" ng-click="movie ? deleteMovie() : ''">Poista elokuva</a>

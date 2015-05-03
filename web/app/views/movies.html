@@ -3,7 +3,7 @@
     <ul class="collection">
         <li class="collection-item" ng-repeat="movie in movies">
             <div class="movie">
-                <h2 style="font-size: 2em;">{{movie.name}} ({{movie.release}})</h2>
+                <a ng-href="#/movies/{{movie.$id}}"><h2 style="font-size: 2em;">{{movie.name}} ({{movie.release}})</h2></a>
                 <p>Ohjannut: {{movie.director}}</p>
                 <p>{{movie.description}}</p>
             </div>

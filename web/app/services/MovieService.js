@@ -20,10 +20,21 @@ angular.module('MovieApp')
                 if (empty) {
                     return false;
                 }
-                return movies.$add(movie);//.then(function(data) {
+                return movies.$add(movie);
             }
             
             this.removeMovie = function(movie) {
                 return movies.$remove(movie);
+            }
+            
+            this.updateMovie = function(movie) {
+
+                movies.$save(movie);
+            }
+            
+            this.getMovie = function(id, done) {
+                movies.$loaded(function(){
+                    done(movies.$getRecord(id));
+                });
             }
         });  

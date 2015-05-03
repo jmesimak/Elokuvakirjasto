@@ -1,0 +1,20 @@
+<h1>Etsi elokuvaa</h1>
+
+<input placeholder="nimellä" ng-model="search.name" ng-blur="findMovies()">
+<input placeholder="julkaisuvuodella" ng-model="search.release" ng-blur="findMovies()">
+
+<h2>Haun tulokset</h2>
+<div id="movie-list" class="row">
+    
+    <ng-pluralize count="movies.length"
+                  when="{'0': 'Ei osumia',
+                  'one': 'Löyty yks leffa',
+                  'other': 'Löyty {} leffaa'}"></ng-pluralize>
+    <ul class="collection">
+        <li class="collection-item" ng-repeat="movie in movies">
+            <div class="movie">
+                <a ng-href="{{'http://www.imdb.com/title/'+movie.imdbID}}"><h2 style="font-size: 2em;">{{movie.Title}} ({{movie.Year}})</h2></a>
+            </div>
+        </li>
+    </ul>
+</div>

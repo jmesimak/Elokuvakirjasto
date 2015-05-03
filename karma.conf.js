@@ -12,7 +12,9 @@ module.exports = function(config){
       'web/app/app.js',
       'web/app/**/**.js',
       'test/movie_list_test.js',
-      'test/add_movie_test.js'
+      'test/add_movie_test.js',
+      'test/edit_movie_test.js',
+      'test/show_movie_test.js'
     ],
 
     autoWatch : true,
